@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Birthday Card</title>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+
+    <script>
+      function checkPassword() {
+        var correctPassword = "nisha"; // Change this to your password
+        var enteredPassword = prompt("Please enter the password:");
+
+        while (enteredPassword !== correctPassword) {
+          alert("Incorrect password. Please try again.");
+          enteredPassword = prompt("Please enter the password:");
+        }
+
+        document.getElementById('message').innerHTML = "Correct password! Loading your birthday card...";
+        
+        setTimeout(function() {
+          // Once the password is correct, inject the birthday card HTML into the page
+          document.body.innerHTML = `
+            <canvas id="canvas"></canvas>
+            <div class="card">
+              <div class="outside">
+                <div class="front">
+                  <p>Happy Birthday <br>Nisha</p>
+                  <div class="cake">
+                    <div class="top-layer"></div>
+                    <div class="middle-layer"></div>
+                    <div class="bottom-layer"></div>
+                    <div class="candle"></div>
+                  </div>
+                </div>
+                <div class="back"></div>
+              </div>
+              <div class="inside">
+                <p>Oi Thangoooo  ! loosu <b><br>I love Youuuuuu ❤</b></p>
+                <h1>&#127873;</h1>
+              </div>
+            </div>
+          `;
+          onLoad(); // Re-initialize the canvas script, if required
+        }, 1000);
+      }
+
+      // Check password on page load
+      window.onload = checkPassword;
+    </script>
+  </head>
+  <body>
+    <div class="message" id="message">Please enter the password to access the page.</div>
+  </body>
+</html>
