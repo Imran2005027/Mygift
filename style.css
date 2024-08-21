@@ -171,6 +171,10 @@
       width: 100vw; /* Set width based on viewport width */
       height: 80vw; /* Auto height to maintain aspect ratio */
     }
+
+    .inside{
+        line-height:2;
+    }
   
     .inside h1 {
       font-size: 80px;
@@ -200,7 +204,9 @@
       width: 100vw; /* Card will take full width on smaller screens */
       height: 80vw;
     }
-  
+  .inside{
+        line-height: 2;
+    }
     .inside h1 {
       font-size: 60px;
       line-height: 60px;
